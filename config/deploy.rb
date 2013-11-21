@@ -1,4 +1,3 @@
-load 'deploy/assets'
 require 'bundler/capistrano'
 
 set :application, "redmine"
