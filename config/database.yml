@@ -2,19 +2,19 @@ production:
   adapter: postgresql
   database: redmine
   host: localhost
-  username: postgres
-  password: "postgres"
+  username: redmine
+  password: "my_password"
 
 development:
   adapter: postgresql
   database: redmine_development
   host: localhost
-  username: postgres
-  password: "postgres"
+  username: redmine
+  password: "my_password"
 
 test:
   adapter: postgresql
   database: redmine_test
   host: localhost
-  username: postgres
-  password: "postgres"
+  username: redmine
+  password: "my_password"
