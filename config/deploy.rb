@@ -22,7 +22,13 @@ namespace :deploy do
 
   task :default do
     update
+    new_token
     restart
+  end
+
+  desc "Generate new secret token"
+  task :new_token, roles: :app, except: { no_release: true } do 
+    run "cd #{current_path} && RAILS_ENV=#{rails_env} bundle exec rake generate_secret_token"
   end
 
   desc "Zero-downtime restart of Unicorn"
@@ -32,7 +38,7 @@ namespace :deploy do
 
   desc "Start unicorn"
   task :start, roles: :app, except: { no_release: true } do
-    run "cd #{current_path} ; RAILS_ENV=#{rails_env} bundle exec unicorn -c #{current_path}/config/unicorn.rb -D"
+    run "cd #{current_path} && RAILS_ENV=#{rails_env} bundle exec unicorn -c #{current_path}/config/unicorn.rb -D"
   end
 
   desc "Stop unicorn"
