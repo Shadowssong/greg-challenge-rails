@@ -11,9 +11,16 @@ Deploy Redmine using Capistrano and serve requests with nginx via Unicorn.
 = Deployment steps
 
 1) Update domain for environment in `config/deploy/environment.rb`  
+
 2) cap <environment> deploy:setup  
+
 3) cap <environment> deploy:check  
+
 4) cap <environment> deploy:update  
+
 5) cap <environment> deploy:migrate  
+
 6) cap <environment> deploy:start  
+
 7) cap <environment> deploy  
+
